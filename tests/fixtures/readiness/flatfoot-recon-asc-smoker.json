@@ -1,0 +1,16 @@
+{
+  "caseId": "case-demo-flatfoot-003",
+  "practiceId": "practice-podiatry-demo",
+  "procedureCode": "28725",
+  "procedureTags": ["reconstruction", "fusion"],
+  "siteOfService": "asc",
+  "anesthesia": "general",
+  "facilityId": "facility-demo-asc",
+  "payerId": "payer-demo-commercial",
+  "caseType": "insured",
+  "authorizationRequired": true,
+  "riskFlags": ["smoker", "vascular_disease"],
+  "inHouseDme": true,
+  "urgency": "elective",
+  "surgeryDate": "2027-03-03"
+}

@@ -1,0 +1,16 @@
+{
+  "caseId": "case-demo-bunion-002",
+  "practiceId": "practice-podiatry-demo",
+  "procedureCode": "28296",
+  "procedureTags": ["bunionectomy", "osteotomy"],
+  "siteOfService": "asc",
+  "anesthesia": "mac",
+  "facilityId": "facility-demo-asc",
+  "payerId": "payer-demo-medicare",
+  "caseType": "insured",
+  "authorizationRequired": true,
+  "riskFlags": ["diabetes"],
+  "inHouseDme": false,
+  "urgency": "elective",
+  "surgeryDate": "2027-02-10"
+}
