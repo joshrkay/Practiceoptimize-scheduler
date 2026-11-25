@@ -1,0 +1,41 @@
+{
+  "description": "Synthetic: urgent excisional debridement of a right-foot diabetic ulcer with infection, office procedure room tomorrow, open slots after an existing case.",
+  "now": "2026-12-01T15:00:00.000Z",
+  "order": {
+    "practiceId": "practice-podiatry-pilot",
+    "orderId": "order-urg-0001",
+    "caseId": "case-urg-0001",
+    "patientId": "patient-synth-0001",
+    "surgeonId": "surgeon-dpm-01",
+    "urgency": "urgent",
+    "signature": { "signedBy": "surgeon-dpm-01", "signedAt": "2026-12-01T14:55:00.000Z" },
+    "procedure": { "code": "11042", "description": "Excisional debridement, subcutaneous tissue" },
+    "side": "right",
+    "date": "2026-12-02",
+    "durationMinutes": 45,
+    "siteOfService": { "kind": "office", "locationId": "loc-main", "roomId": "proc-room-1", "timeZone": "America/Chicago" },
+    "financialClass": "insured",
+    "payer": { "payerId": "payer-synth-commercial", "name": "Synthetic Commercial Plan" }
+  },
+  "caseRequest": {
+    "practiceId": "practice-podiatry-pilot",
+    "caseId": "case-urg-0001",
+    "orderId": "order-urg-0001",
+    "procedure": { "code": "11042", "description": "Excisional debridement, subcutaneous tissue" },
+    "side": "right",
+    "date": "2026-12-02"
+  },
+  "office": {
+    "locationId": "loc-main",
+    "slots": [
+      { "slot": { "slotId": "slot-1202-0800", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T14:00:00.000Z", "end": "2026-12-02T15:00:00.000Z" }, "bookedCaseId": "case-routine-0101" },
+      { "slot": { "slotId": "slot-1202-0900", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T15:00:00.000Z", "end": "2026-12-02T16:00:00.000Z" }, "bookedCaseId": null },
+      { "slot": { "slotId": "slot-1202-1000", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T16:00:00.000Z", "end": "2026-12-02T17:00:00.000Z" }, "bookedCaseId": null }
+    ]
+  },
+  "recipients": [
+    { "recipientId": "patient-synth-0001", "relationship": "patient" },
+    { "recipientId": "contact-synth-0001", "relationship": "authorized_contact" }
+  ],
+  "payerWindowsHours": { "payer-synth-commercial": 48 }
+}

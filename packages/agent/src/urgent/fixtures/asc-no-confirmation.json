@@ -1,0 +1,31 @@
+{
+  "description": "Synthetic: urgent incision and drainage of a right-foot diabetic foot infection submitted electronically to an ASC late in the evening (21:30 local); the ASC never confirms. Self-pay.",
+  "now": "2026-12-02T03:30:00.000Z",
+  "order": {
+    "practiceId": "practice-podiatry-pilot",
+    "orderId": "order-urg-0004",
+    "caseId": "case-urg-0004",
+    "patientId": "patient-synth-0004",
+    "surgeonId": "surgeon-dpm-02",
+    "urgency": "urgent",
+    "signature": { "signedBy": "surgeon-dpm-02", "signedAt": "2026-12-02T03:25:00.000Z" },
+    "procedure": { "code": "28002", "description": "Incision and drainage, deep abscess or infection, foot" },
+    "side": "right",
+    "date": "2026-12-02",
+    "durationMinutes": 60,
+    "siteOfService": { "kind": "asc", "facilityId": "asc-synth-south", "timeZone": "America/Chicago" },
+    "financialClass": "self_pay",
+    "payer": null
+  },
+  "caseRequest": {
+    "practiceId": "practice-podiatry-pilot",
+    "caseId": "case-urg-0004",
+    "orderId": "order-urg-0004",
+    "procedure": { "code": "28002", "description": "Incision and drainage, deep abscess or infection, foot" },
+    "side": "right",
+    "date": "2026-12-02"
+  },
+  "asc": { "facilityId": "asc-synth-south", "name": "Synthetic South Surgery Center", "phoneNumber": "555-0187", "hasElectronicChannel": true },
+  "recipients": [{ "recipientId": "patient-synth-0004", "relationship": "patient" }],
+  "payerWindowsHours": {}
+}

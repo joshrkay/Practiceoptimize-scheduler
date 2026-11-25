@@ -1,0 +1,35 @@
+{
+  "description": "Synthetic: urgent incision and drainage of a left-foot diabetic foot infection at an ASC with an electronic add-on channel; mixed self-pay and insurance.",
+  "now": "2026-12-01T16:00:00.000Z",
+  "order": {
+    "practiceId": "practice-podiatry-pilot",
+    "orderId": "order-urg-0003",
+    "caseId": "case-urg-0003",
+    "patientId": "patient-synth-0003",
+    "surgeonId": "surgeon-dpm-02",
+    "urgency": "urgent",
+    "signature": { "signedBy": "surgeon-dpm-02", "signedAt": "2026-12-01T15:58:00.000Z" },
+    "procedure": { "code": "28002", "description": "Incision and drainage, deep abscess or infection, foot" },
+    "side": "left",
+    "date": "2026-12-02",
+    "durationMinutes": 60,
+    "siteOfService": { "kind": "asc", "facilityId": "asc-synth-north", "timeZone": "America/Chicago" },
+    "financialClass": "mixed",
+    "payer": { "payerId": "payer-synth-commercial", "name": "Synthetic Commercial Plan" }
+  },
+  "caseRequest": {
+    "practiceId": "practice-podiatry-pilot",
+    "caseId": "case-urg-0003",
+    "orderId": "order-urg-0003",
+    "procedure": { "code": "28002", "description": "Incision and drainage, deep abscess or infection, foot" },
+    "side": "left",
+    "date": "2026-12-02"
+  },
+  "asc": { "facilityId": "asc-synth-north", "name": "Synthetic North Surgery Center", "phoneNumber": "555-0142", "hasElectronicChannel": true },
+  "ascConfirmation": { "afterMinutes": 6, "start": "2026-12-02T13:30:00.000Z", "confirmationNumber": "ASC-CONF-7781" },
+  "recipients": [
+    { "recipientId": "patient-synth-0003", "relationship": "patient" },
+    { "recipientId": "contact-synth-0003", "relationship": "authorized_contact" }
+  ],
+  "payerWindowsHours": { "payer-synth-commercial": 48 }
+}
