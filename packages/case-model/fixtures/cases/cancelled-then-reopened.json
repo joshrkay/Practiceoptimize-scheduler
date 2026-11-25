@@ -1,0 +1,28 @@
+{
+  "description": "Synthetic. Self-pay plantar fasciotomy in the office, booked, cancelled by the patient, then rebooked 20 days later.",
+  "practiceId": "practice-synthetic-podiatry-01",
+  "cases": [
+    {
+      "id": "case-plantar-release-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-plantar-release-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-02",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-02", "signedAt": "2026-10-01T15:00:00.000Z" },
+        "urgent": false,
+        "cptCodes": ["28060"],
+        "diagnosisCodes": ["M72.2"]
+      },
+      "caseType": "self_pay",
+      "site": { "kind": "office_procedure_room", "locationId": "location-synthetic-main-01" },
+      "surgeryDate": "2026-11-02",
+      "procedures": [
+        { "cptCode": "28060", "description": "Plantar fasciotomy", "laterality": "left", "billing": "self_pay" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-02", "assistantIds": [], "anesthesia": "local" },
+      "slot": { "start": "2026-11-02T15:00:00.000Z", "end": "2026-11-02T16:00:00.000Z" }
+    }
+  ],
+  "authorizations": []
+}

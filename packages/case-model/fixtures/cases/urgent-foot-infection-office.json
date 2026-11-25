@@ -1,0 +1,28 @@
+{
+  "description": "Synthetic. Urgent office debridement for a foot infection on a surgeon's signed urgent order.",
+  "practiceId": "practice-synthetic-podiatry-01",
+  "cases": [
+    {
+      "id": "case-urgent-debridement-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-urgent-debridement-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-02",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-02", "signedAt": "2026-11-25T13:10:00.000Z" },
+        "urgent": true,
+        "cptCodes": ["11042"],
+        "diagnosisCodes": ["L03.032"]
+      },
+      "caseType": "insured",
+      "site": { "kind": "office_procedure_room", "locationId": "location-synthetic-main-01", "roomName": "Procedure room 1" },
+      "surgeryDate": "2026-11-25",
+      "procedures": [
+        { "cptCode": "11042", "description": "Debridement, subcutaneous tissue", "laterality": "left", "billing": "insured" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-02", "assistantIds": [], "anesthesia": "local" },
+      "slot": { "start": "2026-11-25T16:00:00.000Z", "end": "2026-11-25T16:45:00.000Z", "roomName": "Procedure room 1" }
+    }
+  ],
+  "authorizations": []
+}
