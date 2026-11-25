@@ -1,0 +1,56 @@
+{
+  "caseId": "case-pod-0001",
+  "practiceId": "practice-footcare-demo",
+  "paymentClass": "mixed",
+  "preferredLocale": "en",
+  "procedureDate": "2026-03-24",
+  "arrivalTime": "06:30",
+  "patientDateOfBirth": "1971-08-19",
+  "patientName": "Synthetic Patient",
+  "procedureName": "Left first metatarsal bunionectomy",
+  "cptCodes": ["28296"],
+  "diagnosisCodes": ["M20.12"],
+  "insurance": { "payer": "Synthetic Health Plan", "memberId": "SYN-889-4471", "groupNumber": "GRP-5521" },
+  "otherCases": [{ "caseId": "case-pod-0002", "procedureName": "Right hammertoe correction" }],
+  "internalNotes": "Patient anxious about anesthesia; scheduler to call twice.",
+  "facility": {
+    "name": "Lakeside Foot and Ankle Surgery Center",
+    "address": "410 Harbor Road, Suite 2, Springfield, ST 00000",
+    "parking": "Free lot behind the building; enter from Harbor Road.",
+    "npi": "0000000000",
+    "contractRate": "REDACTED"
+  },
+  "surgeon": { "displayName": "Dr. Alex Rivera", "npi": "1111111111", "personalMobile": "555-0100" },
+  "location": { "phone": "555-0142", "faxNumber": "555-0143" },
+  "readinessItems": [
+    {
+      "id": "ri-forms",
+      "patientLabel": { "en": "Sign your consent forms", "es": "Firme sus formularios de consentimiento" },
+      "status": "pending",
+      "owner": "patient",
+      "patientVisible": true
+    },
+    {
+      "id": "ri-ride",
+      "patientLabel": { "en": "Arrange a ride home", "es": "Organice el transporte a casa" },
+      "status": "pending",
+      "owner": "patient",
+      "patientVisible": true
+    },
+    {
+      "id": "ri-auth",
+      "patientLabel": { "en": "Insurance approval" },
+      "status": "complete",
+      "owner": "payer",
+      "patientVisible": true,
+      "authorizationNumber": "AUTH-77120"
+    },
+    {
+      "id": "ri-implant",
+      "patientLabel": { "en": "Implant on order" },
+      "status": "pending",
+      "owner": "facility",
+      "patientVisible": false
+    }
+  ]
+}
