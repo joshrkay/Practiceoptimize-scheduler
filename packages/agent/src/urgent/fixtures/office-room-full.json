@@ -1,0 +1,42 @@
+{
+  "description": "Synthetic: urgent incision of bone cortex for a left-foot plantar abscess; the procedure room is fully booked tomorrow, open slots exist after it.",
+  "now": "2026-12-01T15:00:00.000Z",
+  "order": {
+    "practiceId": "practice-podiatry-pilot",
+    "orderId": "order-urg-0002",
+    "caseId": "case-urg-0002",
+    "patientId": "patient-synth-0002",
+    "surgeonId": "surgeon-dpm-01",
+    "urgency": "urgent",
+    "signature": { "signedBy": "surgeon-dpm-01", "signedAt": "2026-12-01T14:50:00.000Z" },
+    "procedure": { "code": "28005", "description": "Incision, bone cortex, foot (abscess or osteomyelitis)" },
+    "side": "left",
+    "date": "2026-12-02",
+    "durationMinutes": 60,
+    "siteOfService": { "kind": "office", "locationId": "loc-main", "roomId": "proc-room-1", "timeZone": "America/Chicago" },
+    "financialClass": "insured",
+    "payer": { "payerId": "payer-synth-medicare", "name": "Synthetic Medicare" }
+  },
+  "caseRequest": {
+    "practiceId": "practice-podiatry-pilot",
+    "caseId": "case-urg-0002",
+    "orderId": "order-urg-0002",
+    "procedure": { "code": "28005", "description": "Incision, bone cortex, foot (abscess or osteomyelitis)" },
+    "side": "left",
+    "date": "2026-12-02"
+  },
+  "office": {
+    "locationId": "loc-main",
+    "slots": [
+      { "slot": { "slotId": "slot-1202-0800", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T14:00:00.000Z", "end": "2026-12-02T15:00:00.000Z" }, "bookedCaseId": "case-routine-0201" },
+      { "slot": { "slotId": "slot-1202-0900", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T15:00:00.000Z", "end": "2026-12-02T16:00:00.000Z" }, "bookedCaseId": "case-routine-0202" },
+      { "slot": { "slotId": "slot-1202-1000", "roomId": "proc-room-1", "date": "2026-12-02", "start": "2026-12-02T16:00:00.000Z", "end": "2026-12-02T17:00:00.000Z" }, "bookedCaseId": "case-routine-0203" },
+      { "slot": { "slotId": "slot-1203-0800", "roomId": "proc-room-1", "date": "2026-12-03", "start": "2026-12-03T14:00:00.000Z", "end": "2026-12-03T15:00:00.000Z" }, "bookedCaseId": null },
+      { "slot": { "slotId": "slot-1203-0900", "roomId": "proc-room-1", "date": "2026-12-03", "start": "2026-12-03T15:00:00.000Z", "end": "2026-12-03T16:00:00.000Z" }, "bookedCaseId": null },
+      { "slot": { "slotId": "slot-1203-1300", "roomId": "proc-room-1", "date": "2026-12-03", "start": "2026-12-03T19:00:00.000Z", "end": "2026-12-03T20:00:00.000Z" }, "bookedCaseId": null },
+      { "slot": { "slotId": "slot-1204-0800", "roomId": "proc-room-1", "date": "2026-12-04", "start": "2026-12-04T14:00:00.000Z", "end": "2026-12-04T15:00:00.000Z" }, "bookedCaseId": null }
+    ]
+  },
+  "recipients": [{ "recipientId": "patient-synth-0002", "relationship": "patient" }],
+  "payerWindowsHours": { "payer-synth-medicare": 72 }
+}
