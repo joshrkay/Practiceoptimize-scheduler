@@ -1,0 +1,88 @@
+{
+  "description": "Synthetic. A confirmed bunionectomy at an ASC moves 3 weeks later, past its authorization validity.",
+  "practiceId": "practice-podiatry-demo",
+  "now": "2026-12-01T15:00:00.000Z",
+  "cases": [
+    {
+      "caseId": "case-bunion-0001",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0001",
+      "status": "Confirmed",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261210-1400",
+      "scheduledStart": "2026-12-10T14:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28297"
+        ],
+        "description": "Bunionectomy (Lapidus), left foot",
+        "durationMinutes": 120
+      },
+      "authorization": {
+        "authorizationId": "auth-demo-0001",
+        "cptCodes": [
+          "28297"
+        ],
+        "validFrom": "2026-11-20T00:00:00.000Z",
+        "validThrough": "2026-12-20T23:59:59.000Z"
+      },
+      "readinessItems": [
+        {
+          "itemId": "ri-cbc-0001",
+          "kind": "lab",
+          "label": "CBC and BMP",
+          "completedOn": "2026-11-24T00:00:00.000Z",
+          "validForDays": 30
+        },
+        {
+          "itemId": "ri-xray-0001",
+          "kind": "imaging",
+          "label": "Weight-bearing foot X-ray",
+          "completedOn": "2026-11-15T00:00:00.000Z",
+          "validForDays": 90
+        }
+      ],
+      "coordinationRequests": [
+        {
+          "requestId": "coord-rep-0001",
+          "party": "vendor",
+          "label": "Implant rep (synthetic plating vendor)"
+        },
+        {
+          "requestId": "coord-anes-0001",
+          "party": "team",
+          "label": "Anesthesia (MAC with ankle block)"
+        }
+      ],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-0001",
+        "start": "2026-12-17T15:00:00.000Z"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "slotId": "slot-asc-20261231-1400",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-31T14:00:00.000Z",
+      "end": "2026-12-31T16:00:00.000Z"
+    },
+    {
+      "slotId": "slot-asc-20261229-0800",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-29T08:00:00.000Z",
+      "end": "2026-12-29T10:00:00.000Z"
+    }
+  ],
+  "change": {
+    "type": "date",
+    "caseId": "case-bunion-0001",
+    "preferredStart": "2026-12-31T14:00:00.000Z"
+  }
+}
