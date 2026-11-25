@@ -1,0 +1,49 @@
+{
+  "description": "Synthetic. Insured bunionectomy whose authorization is denied; the patient chooses to self-pay.",
+  "practiceId": "practice-synthetic-podiatry-01",
+  "cases": [
+    {
+      "id": "case-bunion-denied-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-bunion-denied-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-01",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-01", "signedAt": "2026-11-05T15:00:00.000Z" },
+        "urgent": false,
+        "cptCodes": ["28296"],
+        "diagnosisCodes": ["M20.12"]
+      },
+      "caseType": "insured",
+      "site": { "kind": "office_procedure_room", "locationId": "location-synthetic-main-01" },
+      "surgeryDate": "2026-12-14",
+      "procedures": [
+        { "cptCode": "28296", "description": "Bunionectomy with distal metatarsal osteotomy", "laterality": "left", "billing": "insured" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-01", "assistantIds": [], "anesthesia": "local" },
+      "slot": { "start": "2026-12-14T15:00:00.000Z", "end": "2026-12-14T16:30:00.000Z" },
+      "clinicalReadinessItems": [
+        {
+          "id": "case-bunion-denied-01:history_and_physical",
+          "kind": "history_and_physical",
+          "category": "clinical",
+          "phase": "pre_op",
+          "required": true,
+          "status": "open"
+        }
+      ]
+    }
+  ],
+  "authorizations": [
+    {
+      "id": "auth-bunion-denied-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "payerName": "Synthetic Health Plan",
+      "status": "denied",
+      "cptCodes": ["28296"],
+      "validFrom": "2026-11-15",
+      "validTo": "2027-01-31",
+      "coverage": { "caseIds": ["case-bunion-denied-01"] }
+    }
+  ]
+}

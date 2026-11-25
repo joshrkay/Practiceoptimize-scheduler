@@ -1,0 +1,41 @@
+{
+  "description": "Synthetic. Insured hammertoe correction plus a cosmetic, self-pay toe procedure in the same surgery.",
+  "practiceId": "practice-synthetic-podiatry-01",
+  "cases": [
+    {
+      "id": "case-mixed-hammertoe-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-mixed-hammertoe-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-01",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-01", "signedAt": "2026-11-10T15:00:00.000Z" },
+        "urgent": false,
+        "cptCodes": ["28285", "28899"],
+        "diagnosisCodes": ["M20.41"]
+      },
+      "caseType": "mixed",
+      "site": { "kind": "facility", "facilityId": "facility-synthetic-asc-01" },
+      "surgeryDate": "2026-12-21",
+      "procedures": [
+        { "cptCode": "28285", "description": "Hammertoe correction", "laterality": "right", "billing": "insured" },
+        { "cptCode": "28899", "description": "Cosmetic toe procedure (unlisted)", "laterality": "right", "billing": "self_pay" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-01", "assistantIds": [], "anesthesia": "mac" },
+      "slot": { "start": "2026-12-21T14:00:00.000Z", "end": "2026-12-21T15:30:00.000Z", "roomName": "OR 1" }
+    }
+  ],
+  "authorizations": [
+    {
+      "id": "auth-mixed-hammertoe-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "payerName": "Synthetic Health Plan",
+      "status": "approved",
+      "authNumber": "SYN-AUTH-0002",
+      "cptCodes": ["28285"],
+      "validFrom": "2026-12-01",
+      "validTo": "2026-12-31",
+      "coverage": { "caseIds": ["case-mixed-hammertoe-01"] }
+    }
+  ]
+}

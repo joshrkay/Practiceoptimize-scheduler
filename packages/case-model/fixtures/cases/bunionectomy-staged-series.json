@@ -1,0 +1,71 @@
+{
+  "description": "Synthetic. Left then right bunionectomy six weeks apart at an ASC, linked as a series, one authorization covering both.",
+  "practiceId": "practice-synthetic-podiatry-01",
+  "series": {
+    "id": "series-bunion-staged-01",
+    "practiceId": "practice-synthetic-podiatry-01",
+    "label": "Staged bilateral bunionectomy",
+    "caseIds": ["case-bunion-left-01", "case-bunion-right-01"]
+  },
+  "cases": [
+    {
+      "id": "case-bunion-left-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-bunion-left-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-01",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-01", "signedAt": "2026-11-02T15:00:00.000Z" },
+        "urgent": false,
+        "cptCodes": ["28296"],
+        "diagnosisCodes": ["M20.12"]
+      },
+      "caseType": "insured",
+      "seriesId": "series-bunion-staged-01",
+      "site": { "kind": "facility", "facilityId": "facility-synthetic-asc-01" },
+      "surgeryDate": "2026-12-07",
+      "procedures": [
+        { "cptCode": "28296", "description": "Bunionectomy with distal metatarsal osteotomy", "laterality": "left", "billing": "insured" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-01", "assistantIds": [], "anesthesia": "mac" },
+      "slot": { "start": "2026-12-07T14:00:00.000Z", "end": "2026-12-07T15:30:00.000Z", "roomName": "OR 2" },
+      "parties": [{ "id": "party-patient-synthetic-01", "role": "patient", "displayName": "Test Patient Alpha" }]
+    },
+    {
+      "id": "case-bunion-right-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "order": {
+        "id": "order-bunion-right-01",
+        "practiceId": "practice-synthetic-podiatry-01",
+        "surgeonId": "surgeon-synthetic-dpm-01",
+        "signature": { "signedBy": "surgeon-synthetic-dpm-01", "signedAt": "2026-11-02T15:05:00.000Z" },
+        "urgent": false,
+        "cptCodes": ["28296"],
+        "diagnosisCodes": ["M20.11"]
+      },
+      "caseType": "insured",
+      "seriesId": "series-bunion-staged-01",
+      "site": { "kind": "facility", "facilityId": "facility-synthetic-asc-01" },
+      "surgeryDate": "2027-01-18",
+      "procedures": [
+        { "cptCode": "28296", "description": "Bunionectomy with distal metatarsal osteotomy", "laterality": "right", "billing": "insured" }
+      ],
+      "team": { "surgeonId": "surgeon-synthetic-dpm-01", "assistantIds": [], "anesthesia": "mac" },
+      "slot": { "start": "2027-01-18T14:00:00.000Z", "end": "2027-01-18T15:30:00.000Z", "roomName": "OR 2" },
+      "parties": [{ "id": "party-patient-synthetic-01", "role": "patient", "displayName": "Test Patient Alpha" }]
+    }
+  ],
+  "authorizations": [
+    {
+      "id": "auth-bunion-series-01",
+      "practiceId": "practice-synthetic-podiatry-01",
+      "payerName": "Synthetic Health Plan",
+      "status": "approved",
+      "authNumber": "SYN-AUTH-0001",
+      "cptCodes": ["28296"],
+      "validFrom": "2026-11-15",
+      "validTo": "2027-02-28",
+      "coverage": { "caseIds": [], "caseSeriesId": "series-bunion-staged-01" }
+    }
+  ]
+}
