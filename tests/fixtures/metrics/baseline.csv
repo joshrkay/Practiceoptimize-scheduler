@@ -1,0 +1,7 @@
+practice_id,metric,value,source
+practice-podiatry-a,scheduler_minutes_per_case,42,time-and-motion study
+practice-podiatry-a,late_cancellations_per_week,6,facility cancellation log
+practice-podiatry-a,days_order_to_auth_decision,5.5,time-and-motion study
+practice-podiatry-a,auth_first_pass_rate,0.62,time-and-motion study
+practice-podiatry-a,patient_calls_per_case,3.1,front-desk call log
+practice-podiatry-a,auth_denials_per_week,4,facility cancellation log
