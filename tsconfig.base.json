@@ -25,6 +25,7 @@
       "@scheduler/fhir": ["./packages/fhir/src/index.ts"],
       "@scheduler/integrations-availity": ["./packages/integrations/availity/src/index.ts"],
       "@scheduler/integrations-ehr": ["./packages/integrations/ehr/src/index.ts"],
+      "@scheduler/integrations-esign": ["./packages/integrations/esign/src/index.ts"],
       "@scheduler/integrations-fax": ["./packages/integrations/fax/src/index.ts"],
       "@scheduler/integrations-portals": ["./packages/integrations/portals/src/index.ts"]
     }
