@@ -1,0 +1,34 @@
+[
+  {
+    "caseId": "case-podiatry-001",
+    "actionType": "auth_submission",
+    "inputs": { "cpt": "28296", "diagnosisCode": "M20.10", "payer": "payer-synthetic-a" },
+    "reason": "Bunionectomy needs prior authorization before the surgery date.",
+    "evidenceLinks": ["evidence://note/podiatry-001-visit"],
+    "policyResult": { "tier": "approval_required", "humanOnly": false, "summary": "Auth submissions need scheduler approval." }
+  },
+  {
+    "caseId": "case-podiatry-002",
+    "actionType": "reminder",
+    "inputs": { "channel": "sms", "template": "pre-op-reminder", "patientRef": "patient-synthetic-002" },
+    "reason": "Pre-op instructions reminder due 48 hours before the case.",
+    "evidenceLinks": [],
+    "policyResult": { "tier": "low_risk", "humanOnly": false, "summary": "Reminders are low risk." }
+  },
+  {
+    "caseId": "case-podiatry-003",
+    "actionType": "reminder",
+    "inputs": { "channel": "sms", "template": "pre-op-reminder", "patientRef": "patient-synthetic-003" },
+    "reason": "Pre-op instructions reminder due 48 hours before the case.",
+    "evidenceLinks": [],
+    "policyResult": { "tier": "low_risk", "humanOnly": false, "summary": "Reminders are low risk." }
+  },
+  {
+    "caseId": "case-podiatry-004",
+    "actionType": "change_plan",
+    "inputs": { "newRoom": "procedure-room-2", "newStart": "2026-12-03T14:00:00Z" },
+    "reason": "Surgeon out sick; move the case to the next opening.",
+    "evidenceLinks": ["evidence://calendar/surgeon-synthetic-1"],
+    "policyResult": { "tier": "human_only", "humanOnly": true, "summary": "Change plans need a scheduler." }
+  }
+]
