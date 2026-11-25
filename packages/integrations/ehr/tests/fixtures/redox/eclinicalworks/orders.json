@@ -1,0 +1,27 @@
+{
+  "_comment": "SYNTHETIC. Inbound Redox Order messages; not captured from a Redox sandbox. Includes one malformed message (no Order.ID) that must be reported, not dropped silently.",
+  "messages": [
+    {
+      "receivedAt": "2027-01-05T10:00:00.000Z",
+      "payload": {
+        "Meta": { "DataModel": "Order", "EventType": "New", "EventDateTime": "2027-01-05T09:59:00.000Z", "Test": true },
+        "Patient": { "Identifiers": [{ "ID": "ECW-88120", "IDType": "MRN" }] },
+        "Order": {
+          "ID": "ord-ecw-301",
+          "Priority": "Stat",
+          "Provider": { "NPI": "1000000017", "LastName": "Heelspur" },
+          "Procedure": { "Code": "28060", "Codeset": "CPT", "Description": "Plantar fasciectomy, partial" },
+          "Diagnoses": [{ "Code": "M72.2", "Codeset": "ICD-10-CM", "Name": "Plantar fascial fibromatosis" }, { "Codeset": "ICD-10-CM" }]
+        }
+      }
+    },
+    {
+      "receivedAt": "2027-01-05T11:00:00.000Z",
+      "payload": {
+        "Meta": { "DataModel": "Order", "EventType": "New", "EventDateTime": "2027-01-05T10:59:00.000Z", "Test": true },
+        "Patient": { "Identifiers": [{ "ID": "ECW-88120", "IDType": "MRN" }] },
+        "Order": { "Procedure": { "Code": "28060", "Codeset": "CPT" } }
+      }
+    }
+  ]
+}

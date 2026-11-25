@@ -1,0 +1,14 @@
+{
+  "_comment": "SYNTHETIC. Shaped after the Redox PatientSearch data model; not captured from a Redox sandbox. Differs from the athenahealth fixture: identifier type, uppercase sex, home phone only, DOB with time.",
+  "Meta": { "DataModel": "PatientSearch", "EventType": "Response", "Test": true },
+  "Patient": {
+    "Identifiers": [{ "ID": "ECW-88120", "IDType": "MRN" }],
+    "Demographics": {
+      "FirstName": "Blake",
+      "LastName": "Samplecase",
+      "DOB": "1978-09-30T00:00:00.000Z",
+      "Sex": "MALE",
+      "PhoneNumber": { "Home": "555-0110" }
+    }
+  }
+}
