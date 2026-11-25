@@ -1,0 +1,464 @@
+{
+  "_note": "Synthetic podiatry data only. No real patients, payers, surgeons or facilities.",
+  "practiceId": "practice-desert-podiatry",
+  "now": "2026-12-01T15:00:00.000Z",
+  "sites": [
+    {
+      "id": "site-office-pr",
+      "practiceId": "practice-desert-podiatry",
+      "name": "Desert Podiatry Office Procedure Room",
+      "kind": "office_procedure_room",
+      "supportedAnesthesia": [
+        "local"
+      ],
+      "excludedRiskFlags": [],
+      "sharesReleasedTime": false,
+      "sharesOpenTime": true
+    },
+    {
+      "id": "site-asc-mesa",
+      "practiceId": "practice-desert-podiatry",
+      "name": "Mesa Foot and Ankle ASC",
+      "kind": "asc",
+      "supportedAnesthesia": [
+        "local",
+        "sedation",
+        "general"
+      ],
+      "excludedRiskFlags": [
+        "bmi_over_40"
+      ],
+      "sharesReleasedTime": true,
+      "sharesOpenTime": false
+    },
+    {
+      "id": "site-asc-saguaro",
+      "practiceId": "practice-desert-podiatry",
+      "name": "Saguaro Surgery Center",
+      "kind": "asc",
+      "supportedAnesthesia": [
+        "local",
+        "sedation",
+        "general"
+      ],
+      "excludedRiskFlags": [],
+      "sharesReleasedTime": true,
+      "sharesOpenTime": true
+    },
+    {
+      "id": "site-asc-paloverde",
+      "practiceId": "practice-desert-podiatry",
+      "name": "Palo Verde ASC",
+      "kind": "asc",
+      "supportedAnesthesia": [
+        "local",
+        "sedation",
+        "general"
+      ],
+      "excludedRiskFlags": [],
+      "sharesReleasedTime": true,
+      "sharesOpenTime": true
+    },
+    {
+      "id": "site-hospital-valley",
+      "practiceId": "practice-desert-podiatry",
+      "name": "Valley General Hospital",
+      "kind": "hospital",
+      "supportedAnesthesia": [
+        "local",
+        "sedation",
+        "general"
+      ],
+      "excludedRiskFlags": [],
+      "sharesReleasedTime": true,
+      "sharesOpenTime": true
+    },
+    {
+      "id": "site-asc-foreign",
+      "practiceId": "practice-other",
+      "name": "Other Practice ASC",
+      "kind": "asc",
+      "supportedAnesthesia": [
+        "local",
+        "sedation",
+        "general"
+      ],
+      "excludedRiskFlags": [],
+      "sharesReleasedTime": true,
+      "sharesOpenTime": true
+    }
+  ],
+  "coverage": {
+    "patient-low": {
+      "payerId": "payer-acme",
+      "planId": "plan-acme-ppo",
+      "active": true,
+      "facilityNetwork": {
+        "site-office-pr": "in_network",
+        "site-asc-mesa": "in_network",
+        "site-asc-saguaro": "out_of_network",
+        "site-asc-paloverde": "in_network",
+        "site-hospital-valley": "in_network",
+        "site-asc-foreign": "in_network"
+      }
+    },
+    "patient-high": {
+      "payerId": "payer-acme",
+      "planId": "plan-acme-ppo",
+      "active": true,
+      "facilityNetwork": {
+        "site-office-pr": "in_network",
+        "site-asc-mesa": "in_network",
+        "site-asc-saguaro": "out_of_network",
+        "site-asc-paloverde": "in_network",
+        "site-hospital-valley": "in_network",
+        "site-asc-foreign": "in_network"
+      }
+    },
+    "patient-series": {
+      "payerId": "payer-acme",
+      "planId": "plan-acme-ppo",
+      "active": true,
+      "facilityNetwork": {
+        "site-office-pr": "in_network",
+        "site-asc-mesa": "in_network",
+        "site-asc-saguaro": "out_of_network",
+        "site-asc-paloverde": "in_network",
+        "site-hospital-valley": "in_network",
+        "site-asc-foreign": "in_network"
+      }
+    },
+    "patient-inactive": {
+      "payerId": "payer-acme",
+      "planId": "plan-acme-ppo",
+      "active": false,
+      "facilityNetwork": {
+        "site-office-pr": "in_network",
+        "site-asc-mesa": "in_network",
+        "site-asc-saguaro": "out_of_network",
+        "site-asc-paloverde": "in_network",
+        "site-hospital-valley": "in_network",
+        "site-asc-foreign": "in_network"
+      }
+    }
+  },
+  "siteOfServiceRules": [
+    {
+      "payerId": "payer-acme",
+      "planId": "plan-acme-ppo",
+      "procedureCode": "28296",
+      "rule": {
+        "allowedSiteKinds": [
+          "office_procedure_room",
+          "asc"
+        ],
+        "source": "Acme PPO site-of-service policy (synthetic)"
+      }
+    }
+  ],
+  "privileges": [
+    {
+      "surgeonId": "surgeon-ramos",
+      "facilityId": "site-office-pr",
+      "procedureCodes": [
+        "28296",
+        "28285"
+      ],
+      "granted": true
+    },
+    {
+      "surgeonId": "surgeon-ramos",
+      "facilityId": "site-asc-mesa",
+      "procedureCodes": [
+        "28296",
+        "28285"
+      ],
+      "granted": true,
+      "validUntil": "2027-06-30T23:59:59.000Z"
+    },
+    {
+      "surgeonId": "surgeon-ramos",
+      "facilityId": "site-asc-saguaro",
+      "procedureCodes": [
+        "28296",
+        "28285"
+      ],
+      "granted": true
+    },
+    {
+      "surgeonId": "surgeon-ramos",
+      "facilityId": "site-hospital-valley",
+      "procedureCodes": [
+        "28296",
+        "28285"
+      ],
+      "granted": true
+    },
+    {
+      "surgeonId": "surgeon-ramos",
+      "facilityId": "site-asc-foreign",
+      "procedureCodes": [
+        "28296",
+        "28285"
+      ],
+      "granted": true
+    }
+  ],
+  "riskFlags": {
+    "case-bunion-low": [],
+    "case-bunion-high": [
+      "asa_3",
+      "osa"
+    ],
+    "case-bunion-series-2": []
+  },
+  "highRiskFlags": [
+    "asa_3",
+    "bmi_over_40"
+  ],
+  "surgeonPreferences": {
+    "surgeon-ramos": {
+      "preferredSiteIds": [
+        "site-asc-saguaro",
+        "site-asc-mesa",
+        "site-office-pr"
+      ],
+      "caseOrder": "first_case",
+      "seriesSpacingDays": {
+        "min": 21,
+        "max": 42
+      }
+    }
+  },
+  "blockWindows": [
+    {
+      "id": "blk-mesa-or1-2026-12-08",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2026-12-08T13:00:00.000Z",
+      "end": "2026-12-08T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2026-12-15",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2026-12-15T13:00:00.000Z",
+      "end": "2026-12-15T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2026-12-22",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2026-12-22T13:00:00.000Z",
+      "end": "2026-12-22T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2026-12-29",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2026-12-29T13:00:00.000Z",
+      "end": "2026-12-29T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2027-01-05",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2027-01-05T13:00:00.000Z",
+      "end": "2027-01-05T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2027-01-12",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2027-01-12T13:00:00.000Z",
+      "end": "2027-01-12T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2027-01-19",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2027-01-19T13:00:00.000Z",
+      "end": "2027-01-19T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2027-01-26",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2027-01-26T13:00:00.000Z",
+      "end": "2027-01-26T21:00:00.000Z"
+    },
+    {
+      "id": "rel-mesa-or2-2026-12-10",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-2",
+      "kind": "released",
+      "start": "2026-12-10T13:00:00.000Z",
+      "end": "2026-12-10T17:00:00.000Z"
+    },
+    {
+      "id": "open-mesa-or2-2026-12-11",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-2",
+      "kind": "open",
+      "start": "2026-12-11T13:00:00.000Z",
+      "end": "2026-12-11T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2026-12-09-other-surgeon",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-okafor",
+      "start": "2026-12-09T13:00:00.000Z",
+      "end": "2026-12-09T21:00:00.000Z"
+    },
+    {
+      "id": "blk-mesa-or1-2026-12-07-other-practice",
+      "practiceId": "practice-other",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "kind": "surgeon_block",
+      "surgeonId": "surgeon-ramos",
+      "start": "2026-12-09T13:00:00.000Z",
+      "end": "2026-12-09T21:00:00.000Z"
+    },
+    {
+      "id": "open-office-pr1-2026-12-09",
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-office-pr",
+      "roomId": "PR-1",
+      "kind": "open",
+      "start": "2026-12-09T15:00:00.000Z",
+      "end": "2026-12-09T23:00:00.000Z"
+    }
+  ],
+  "booked": [
+    {
+      "practiceId": "practice-desert-podiatry",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "start": "2026-12-15T13:00:00.000Z",
+      "end": "2026-12-15T15:30:00.000Z"
+    },
+    {
+      "practiceId": "practice-other",
+      "facilityId": "site-asc-mesa",
+      "roomId": "OR-1",
+      "start": "2026-12-29T13:00:00.000Z",
+      "end": "2026-12-29T21:00:00.000Z"
+    }
+  ],
+  "authorizations": {
+    "case-bunion-low": {
+      "status": "approved",
+      "validFrom": "2026-12-01T00:00:00.000Z",
+      "validTo": "2027-01-31T23:59:59.000Z"
+    },
+    "case-bunion-high": {
+      "status": "approved",
+      "validFrom": "2026-12-01T00:00:00.000Z",
+      "validTo": "2027-01-31T23:59:59.000Z"
+    },
+    "case-bunion-series-2": {
+      "status": "approved",
+      "validFrom": "2026-12-01T00:00:00.000Z",
+      "validTo": "2027-03-31T23:59:59.000Z"
+    }
+  },
+  "readinessLeadTimeDays": {
+    "case-bunion-low": 7,
+    "case-bunion-high": 14,
+    "case-bunion-series-2": 7
+  },
+  "teamBusy": [
+    {
+      "memberId": "crna-lee",
+      "start": "2026-12-22T12:00:00.000Z",
+      "end": "2026-12-23T00:00:00.000Z"
+    }
+  ],
+  "cases": {
+    "case-bunion-low": {
+      "practiceId": "practice-desert-podiatry",
+      "caseId": "case-bunion-low",
+      "patientId": "patient-low",
+      "surgeonId": "surgeon-ramos",
+      "procedureCode": "28296",
+      "procedureName": "Bunionectomy",
+      "anesthesia": "sedation",
+      "estimatedDurationMinutes": 90,
+      "teamMemberIds": [
+        "crna-lee"
+      ]
+    },
+    "case-bunion-high": {
+      "practiceId": "practice-desert-podiatry",
+      "caseId": "case-bunion-high",
+      "patientId": "patient-high",
+      "surgeonId": "surgeon-ramos",
+      "procedureCode": "28296",
+      "procedureName": "Bunionectomy",
+      "anesthesia": "sedation",
+      "estimatedDurationMinutes": 90,
+      "teamMemberIds": [
+        "crna-lee"
+      ]
+    },
+    "case-bunion-series-2": {
+      "practiceId": "practice-desert-podiatry",
+      "caseId": "case-bunion-series-2",
+      "patientId": "patient-series",
+      "surgeonId": "surgeon-ramos",
+      "procedureCode": "28296",
+      "procedureName": "Bunionectomy (right, staged)",
+      "anesthesia": "sedation",
+      "estimatedDurationMinutes": 90,
+      "teamMemberIds": [
+        "crna-lee"
+      ],
+      "series": {
+        "seriesId": "series-bilateral-bunion",
+        "sequence": 2,
+        "previousCaseStart": "2026-12-10T13:00:00.000Z"
+      }
+    },
+    "case-hammertoe-local": {
+      "practiceId": "practice-desert-podiatry",
+      "caseId": "case-hammertoe-local",
+      "patientId": "patient-low",
+      "surgeonId": "surgeon-ramos",
+      "procedureCode": "28285",
+      "procedureName": "Hammertoe correction",
+      "anesthesia": "local",
+      "estimatedDurationMinutes": 45,
+      "teamMemberIds": []
+    }
+  }
+}
