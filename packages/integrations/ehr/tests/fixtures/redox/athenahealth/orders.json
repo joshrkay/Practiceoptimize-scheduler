@@ -1,0 +1,28 @@
+{
+  "_comment": "SYNTHETIC. Inbound Redox Order messages as our webhook would store them; not captured from a Redox sandbox.",
+  "messages": [
+    {
+      "receivedAt": "2027-01-03T14:00:00.000Z",
+      "payload": {
+        "Meta": { "DataModel": "Order", "EventType": "New", "EventDateTime": "2027-01-03T13:59:00.000Z", "Test": true },
+        "Patient": { "Identifiers": [{ "ID": "ATH-100234", "IDType": "MR" }] },
+        "Order": {
+          "ID": "ord-ath-5001",
+          "TransactionDateTime": "2027-01-03T13:58:00.000Z",
+          "Priority": "Routine",
+          "Provider": { "ID": "prov-ath-9", "NPI": "1000000009", "FirstName": "Robin", "LastName": "Footdoc" },
+          "Procedure": { "Code": "28296", "Codeset": "CPT", "Description": "Bunionectomy with distal metatarsal osteotomy" },
+          "Diagnoses": [{ "Code": "M20.11", "Codeset": "ICD-10-CM", "Name": "Hallux valgus, right foot" }]
+        }
+      }
+    },
+    {
+      "receivedAt": "2027-01-04T09:00:00.000Z",
+      "payload": {
+        "Meta": { "DataModel": "Order", "EventType": "Cancel", "EventDateTime": "2027-01-04T08:59:00.000Z", "Test": true },
+        "Patient": { "Identifiers": [{ "ID": "ATH-100234", "IDType": "MR" }] },
+        "Order": { "ID": "ord-ath-4990", "Procedure": { "Code": "28285", "Codeset": "CPT" } }
+      }
+    }
+  ]
+}

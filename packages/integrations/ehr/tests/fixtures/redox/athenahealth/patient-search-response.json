@@ -1,0 +1,17 @@
+{
+  "_comment": "SYNTHETIC. Shaped after the Redox PatientSearch data model; not captured from a Redox sandbox.",
+  "Meta": { "DataModel": "PatientSearch", "EventType": "Response", "Test": true },
+  "Patient": {
+    "Identifiers": [
+      { "ID": "ATH-100234", "IDType": "MR" },
+      { "ID": "ent-77", "IDType": "EnterpriseID" }
+    ],
+    "Demographics": {
+      "FirstName": "Avery",
+      "LastName": "Testpatient",
+      "DOB": "1961-04-12",
+      "Sex": "Female",
+      "PhoneNumber": { "Home": "555-0100", "Mobile": "555-0101" }
+    }
+  }
+}

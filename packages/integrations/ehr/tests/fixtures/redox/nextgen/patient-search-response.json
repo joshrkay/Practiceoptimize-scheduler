@@ -1,0 +1,11 @@
+{
+  "_comment": "SYNTHETIC. Shaped after the Redox PatientSearch data model; not captured from a Redox sandbox. Differs: our identifier is the second entry, sex not given, no phone.",
+  "Meta": { "DataModel": "PatientSearch", "EventType": "Response", "Test": true },
+  "Patient": {
+    "Identifiers": [
+      { "ID": "acct-5521", "IDType": "AccountNumber" },
+      { "ID": "NG-4410", "IDType": "PersonNumber" }
+    ],
+    "Demographics": { "FirstName": "Casey", "LastName": "Fixtureton", "DOB": "1990-01-15" }
+  }
+}
