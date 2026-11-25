@@ -1,0 +1,113 @@
+{
+  "practiceId": "practice-foot-ankle-a",
+  "parties": [
+    {
+      "id": "party-pcp-new",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Family Medicine (new)",
+      "kind": "pcp",
+      "role": "Primary care physician",
+      "preferredChannel": "fax",
+      "endpoints": { "fax": { "address": "+1-555-0101", "verification": { "status": "unverified" } } }
+    },
+    {
+      "id": "party-pcp-verified",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Internal Medicine",
+      "kind": "pcp",
+      "role": "Primary care physician",
+      "preferredChannel": "email",
+      "endpoints": {
+        "email": {
+          "address": "frontdesk@pcp.example.test",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-1", "verifiedAt": "2026-10-01T15:00:00.000Z" }
+        }
+      }
+    },
+    {
+      "id": "party-cardiology",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Cardiology Associates",
+      "kind": "cardiology",
+      "role": "Cardiology clearance",
+      "preferredChannel": "fax",
+      "endpoints": {
+        "fax": {
+          "address": "+1-555-0102",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-1", "verifiedAt": "2026-10-02T16:00:00.000Z" }
+        }
+      },
+      "hours": { "timezone": "America/Chicago", "windows": [{ "days": ["mon", "tue", "wed", "thu", "fri"], "open": "08:00", "close": "17:00" }] }
+    },
+    {
+      "id": "party-vascular",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Vascular Surgery",
+      "kind": "vascular",
+      "role": "Vascular assessment",
+      "preferredChannel": "fax",
+      "endpoints": {
+        "fax": {
+          "address": "+1-555-0103",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-2", "verifiedAt": "2026-10-03T16:00:00.000Z" }
+        }
+      }
+    },
+    {
+      "id": "party-lab",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Reference Lab",
+      "kind": "lab",
+      "role": "Preoperative labs",
+      "preferredChannel": "fax",
+      "endpoints": {
+        "fax": {
+          "address": "+1-555-0104",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-1", "verifiedAt": "2026-10-04T16:00:00.000Z" }
+        }
+      }
+    },
+    {
+      "id": "party-asc-desk",
+      "practiceId": null,
+      "name": "Synthetic ASC Scheduling Desk",
+      "kind": "asc_scheduling",
+      "role": "Case scheduling",
+      "preferredChannel": "email",
+      "endpoints": {
+        "email": {
+          "address": "scheduling@asc.example.test",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-1", "verifiedAt": "2026-10-05T16:00:00.000Z" }
+        }
+      }
+    },
+    {
+      "id": "party-asc-pat",
+      "practiceId": null,
+      "name": "Synthetic ASC Pre-Admission Testing",
+      "kind": "pre_admission_testing",
+      "role": "Pre-admission testing",
+      "preferredChannel": "in_basket",
+      "endpoints": {
+        "in_basket": {
+          "address": "pat-pool",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-1", "verifiedAt": "2026-10-05T16:30:00.000Z" }
+        }
+      }
+    },
+    {
+      "id": "party-vendor-rep",
+      "practiceId": "practice-foot-ankle-a",
+      "name": "Synthetic Implant Vendor Rep",
+      "kind": "vendor_rep",
+      "role": "Implant vendor representative",
+      "preferredChannel": "email",
+      "endpoints": {
+        "email": {
+          "address": "rep@vendor.example.test",
+          "verification": { "status": "verified", "verifiedBy": "scheduler-2", "verifiedAt": "2026-10-06T16:00:00.000Z" }
+        }
+      }
+    }
+  ]
+}
