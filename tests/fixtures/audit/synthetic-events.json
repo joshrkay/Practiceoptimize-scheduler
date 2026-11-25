@@ -1,0 +1,16 @@
+{
+  "patient": { "name": "Testy Footman", "dob": "1961-03-14", "memberId": "ZZX9900123" },
+  "logLine": "Checking eligibility for patient name: Testy Footman, DOB: 1961-03-14, member id ZZX9900123 via portal",
+  "toolCall": {
+    "practiceId": "practice-podiatry-001",
+    "locationId": "loc-asc-main",
+    "actor": { "type": "agent", "id": "scheduler-agent" },
+    "action": "availity.eligibility.check",
+    "target": { "type": "case", "id": "case-0001" },
+    "inputs": { "caseId": "case-0001", "payerId": "SYNTH-PAYER" },
+    "result": "success",
+    "autonomyTier": 1,
+    "approverId": null,
+    "externalTransactionId": "GTID-SYNTH-0001"
+  }
+}
