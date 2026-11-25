@@ -18,6 +18,7 @@ export default defineConfig({
       '@scheduler/integrations-ehr': src('./packages/integrations/ehr/src/index.ts'),
       '@scheduler/integrations-fax': src('./packages/integrations/fax/src/index.ts'),
       '@scheduler/integrations-portals': src('./packages/integrations/portals/src/index.ts'),
+      '@scheduler/integrations-messaging': src('./packages/integrations/messaging/src/index.ts'),
     },
   },
   test: {
