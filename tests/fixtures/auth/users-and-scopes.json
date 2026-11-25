@@ -1,0 +1,17 @@
+{
+  "practiceId": "practice-podiatry-001",
+  "locations": ["loc-north", "loc-south"],
+  "surgeons": ["surgeon-a", "surgeon-b"],
+  "users": [
+    { "subject": "sub-admin", "userId": "u-admin", "role": "practice_admin", "scope": { "kind": "practice" } },
+    { "subject": "sub-north", "userId": "u-north", "role": "scheduler", "scope": { "kind": "locations", "locationIds": ["loc-north"] } },
+    { "subject": "sub-panel", "userId": "u-panel", "role": "auth_specialist", "scope": { "kind": "surgeons", "surgeonIds": ["surgeon-a"] } },
+    { "subject": "sub-ro", "userId": "u-ro", "role": "read_only", "scope": { "kind": "practice" } }
+  ],
+  "cases": [
+    { "id": "case-1", "practiceId": "practice-podiatry-001", "locationId": "loc-north", "surgeonId": "surgeon-a" },
+    { "id": "case-2", "practiceId": "practice-podiatry-001", "locationId": "loc-south", "surgeonId": "surgeon-a" },
+    { "id": "case-3", "practiceId": "practice-podiatry-001", "locationId": "loc-north", "surgeonId": "surgeon-b" },
+    { "id": "case-4", "practiceId": "practice-other-002", "locationId": "loc-north", "surgeonId": "surgeon-a" }
+  ]
+}
