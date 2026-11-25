@@ -1,0 +1,20 @@
+{
+  "_note": "Synthetic. Case references are opaque ids; no PHI.",
+  "practiceId": "practice-foot-ankle-a",
+  "month": { "year": 2026, "month": 11 },
+  "expectedBillable": 7,
+  "events": [
+    { "label": "plain booking", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-1001", "urgentAddOn": false, "caseType": "bunionectomy", "occurredAt": "2026-11-03T14:00:00Z" },
+    { "label": "booked", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-1002", "urgentAddOn": false, "caseType": "hammertoe-correction", "occurredAt": "2026-11-04T15:00:00Z" },
+    { "label": "cancelled, reopened, rebooked", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-1002", "urgentAddOn": false, "caseType": "hammertoe-correction", "occurredAt": "2026-11-18T15:00:00Z" },
+    { "label": "booked", "practiceId": "practice-foot-ankle-a", "locationId": "loc-asc-east", "caseReference": "case-1003", "urgentAddOn": false, "caseType": "achilles-repair", "occurredAt": "2026-11-05T13:00:00Z" },
+    { "label": "rescheduled", "practiceId": "practice-foot-ankle-a", "locationId": "loc-asc-east", "caseReference": "case-1003", "urgentAddOn": false, "caseType": "achilles-repair", "occurredAt": "2026-11-12T13:00:00Z" },
+    { "label": "booked", "practiceId": "practice-foot-ankle-a", "locationId": "loc-asc-east", "caseReference": "case-1004", "urgentAddOn": false, "caseType": "ankle-arthroscopy", "occurredAt": "2026-11-06T13:00:00Z" },
+    { "label": "case type changed, rebooked", "practiceId": "practice-foot-ankle-a", "locationId": "loc-asc-east", "caseReference": "case-1004", "urgentAddOn": false, "caseType": "ankle-fusion", "occurredAt": "2026-11-09T13:00:00Z" },
+    { "label": "series case 1", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-2001", "seriesId": "series-neuroma-1", "urgentAddOn": false, "caseType": "neuroma-injection", "occurredAt": "2026-11-10T16:00:00Z" },
+    { "label": "series case 2", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-2002", "seriesId": "series-neuroma-1", "urgentAddOn": false, "caseType": "neuroma-injection", "occurredAt": "2026-11-17T16:00:00Z" },
+    { "label": "urgent add-on", "practiceId": "practice-foot-ankle-a", "locationId": "loc-asc-east", "caseReference": "case-3001", "urgentAddOn": true, "caseType": "abscess-drainage", "occurredAt": "2026-11-20T21:00:00Z" },
+    { "label": "last month, excluded", "practiceId": "practice-foot-ankle-a", "locationId": "loc-main-office", "caseReference": "case-0901", "urgentAddOn": false, "caseType": "bunionectomy", "occurredAt": "2026-10-31T23:59:59Z" },
+    { "label": "other practice, same reference, excluded", "practiceId": "practice-foot-ankle-b", "locationId": "loc-b-office", "caseReference": "case-1001", "urgentAddOn": false, "caseType": "bunionectomy", "occurredAt": "2026-11-03T14:00:00Z" }
+  ]
+}
