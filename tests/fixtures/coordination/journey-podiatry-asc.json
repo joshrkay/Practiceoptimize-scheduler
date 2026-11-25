@@ -1,0 +1,29 @@
+{
+  "_note": "Synthetic data only. Podiatry case at an ASC (stands in for the issue's journey-tka.json).",
+  "startAt": "2027-01-04T15:00:00.000Z",
+  "case": {
+    "practiceId": "6f1c2a8e-0000-4000-8000-00000000a001",
+    "caseId": "case-pod-0001",
+    "stage": "scheduled",
+    "surgeryDate": "2027-02-10",
+    "siteOfService": "asc",
+    "procedure": "Bunionectomy with first metatarsal osteotomy (synthetic)",
+    "flags": ["implant", "clearance_required"]
+  },
+  "otherPracticeId": "6f1c2a8e-0000-4000-8000-00000000a002",
+  "parties": [
+    { "partyId": "party-asc-or-desk", "role": "facility_or_desk", "preferredChannel": "fax", "name": "Example Foot and Ankle ASC OR desk" },
+    { "partyId": "party-vendor-rep", "role": "vendor_rep", "preferredChannel": "email", "name": "Example Implants rep" },
+    { "partyId": "party-asc-anesthesia", "role": "anesthesia", "preferredChannel": "fax", "name": "Example Anesthesia Group" },
+    { "partyId": "party-pcp", "role": "primary_care", "preferredChannel": "fax", "name": "Example Family Medicine" },
+    { "partyId": "party-surgeon", "role": "surgeon", "preferredChannel": "in_basket", "name": "Dr. Example Podiatrist, DPM" }
+  ],
+  "expected": {
+    "scheduledStage": {
+      "steps": ["facility-posting", "vendor-rep", "anesthesia-packet", "clearance-primary-care"],
+      "sentImmediately": ["vendor-rep", "anesthesia-packet", "clearance-primary-care"],
+      "heldForApproval": ["facility-posting"]
+    },
+    "newSurgeryDate": "2027-02-24"
+  }
+}
