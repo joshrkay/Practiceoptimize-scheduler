@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["apps/api", "apps/worker", "packages", "evals", "tests", "infra", "*.ts"],
+  "exclude": ["**/node_modules", "**/dist", "**/cdk.out", "apps/web"]
+}

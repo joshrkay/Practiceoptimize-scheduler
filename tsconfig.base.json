@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "paths": {
+      "@scheduler/case-model": ["./packages/case-model/src/index.ts"],
+      "@scheduler/agent": ["./packages/agent/src/index.ts"],
+      "@scheduler/tenancy": ["./packages/tenancy/src/index.ts"],
+      "@scheduler/db": ["./packages/db/src/index.ts"],
+      "@scheduler/audit": ["./packages/audit/src/index.ts"],
+      "@scheduler/fhir": ["./packages/fhir/src/index.ts"],
+      "@scheduler/integrations-availity": ["./packages/integrations/availity/src/index.ts"],
+      "@scheduler/integrations-ehr": ["./packages/integrations/ehr/src/index.ts"],
+      "@scheduler/integrations-fax": ["./packages/integrations/fax/src/index.ts"],
+      "@scheduler/integrations-portals": ["./packages/integrations/portals/src/index.ts"]
+    }
+  }
+}
