@@ -1,0 +1,57 @@
+{
+  "_note": "Synthetic data only. Phone numbers use the 555-01xx fictional range.",
+  "practiceId": "practice-synth-podiatry-1",
+  "location": {
+    "locationId": "loc-synth-central",
+    "displayName": "Prairie Foot and Ankle Center",
+    "smsNumber": "+13125550100",
+    "voiceNumber": "+13125550101",
+    "email": "scheduling@prairie-foot.example.test"
+  },
+  "patients": [
+    {
+      "patientId": "pt-consented-central",
+      "timeZone": "America/Chicago",
+      "addresses": { "phone": "+13125550111", "email": "pt1@example.test", "portalUserId": "portal-1" },
+      "consents": [
+        { "channel": "sms", "source": "intake_form", "grantedAt": "2026-01-05T15:00:00Z" },
+        { "channel": "email", "source": "intake_form", "grantedAt": "2026-01-05T15:00:00Z" },
+        { "channel": "portal", "source": "portal", "grantedAt": "2026-01-05T15:00:00Z" }
+      ]
+    },
+    {
+      "patientId": "pt-no-consent",
+      "timeZone": "America/Chicago",
+      "addresses": { "phone": "+13125550112", "email": "pt2@example.test" },
+      "consents": []
+    },
+    {
+      "patientId": "pt-stopped",
+      "timeZone": "America/Chicago",
+      "addresses": { "phone": "+13125550113", "email": "pt3@example.test" },
+      "consents": [
+        { "channel": "sms", "source": "intake_form", "grantedAt": "2026-01-05T15:00:00Z" },
+        { "channel": "email", "source": "intake_form", "grantedAt": "2026-01-05T15:00:00Z" }
+      ],
+      "optOutAt": "2026-02-01T15:00:00Z"
+    },
+    {
+      "patientId": "pt-contact-limited",
+      "timeZone": "America/New_York",
+      "addresses": { "phone": "+13125550114" },
+      "consents": [],
+      "contact": {
+        "contactId": "contact-1",
+        "addresses": { "phone": "+13125550115" },
+        "consents": [
+          {
+            "channel": "sms",
+            "source": "authorized_contact_form",
+            "grantedAt": "2026-01-06T15:00:00Z",
+            "messageTypes": ["appointment_reminder", "pre_op_instructions"]
+          }
+        ]
+      }
+    }
+  ]
+}
