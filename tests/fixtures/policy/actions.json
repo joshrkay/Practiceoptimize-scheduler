@@ -1,0 +1,114 @@
+{
+  "description": "Synthetic proposed actions for the policy engine (RAH-17). Podiatry cases; no real patients. Every action uses the defaults of practice-podiatry-fixture-001.",
+  "practiceId": "practice-podiatry-fixture-001",
+  "signedOrder": {
+    "orderId": "order-fixture-001",
+    "signedBySurgeonId": "surgeon-fixture-001",
+    "signedAt": "2026-12-01T15:00:00Z",
+    "urgent": false,
+    "laterality": "right",
+    "procedureCode": "28296",
+    "procedureDate": "2027-01-14"
+  },
+  "cases": [
+    {
+      "name": "eligibility check runs on its own",
+      "action": { "kind": "eligibility_check", "siteOfService": "asc", "confidence": 0.97 },
+      "expected": { "disposition": "execute", "blocked": false, "rules": [] }
+    },
+    {
+      "name": "auth submission is queued for approval",
+      "action": { "kind": "auth_submission", "siteOfService": "asc", "confidence": 0.95 },
+      "expected": { "disposition": "queue_for_approval", "blocked": false, "rules": [] }
+    },
+    {
+      "name": "retro-authorization is queued for approval",
+      "action": { "kind": "retro_auth_submission", "siteOfService": "office_procedure_room", "confidence": 0.95 },
+      "expected": { "disposition": "queue_for_approval", "blocked": false, "rules": [] }
+    },
+    {
+      "name": "left-foot posting against a right-foot order is blocked",
+      "action": {
+        "kind": "facility_posting",
+        "siteOfService": "asc",
+        "confidence": 0.99,
+        "withSignedOrder": true,
+        "facts": { "laterality": "left", "procedureCode": "28296", "procedureDate": "2027-01-14" }
+      },
+      "expected": { "disposition": "escalate_to_human", "blocked": true, "rules": ["cross_check_signed_order"] }
+    },
+    {
+      "name": "hammertoe posting against a bunionectomy order is blocked",
+      "action": {
+        "kind": "facility_posting",
+        "siteOfService": "asc",
+        "confidence": 0.99,
+        "withSignedOrder": true,
+        "facts": { "laterality": "right", "procedureCode": "28285", "procedureDate": "2027-01-14" }
+      },
+      "expected": { "disposition": "escalate_to_human", "blocked": true, "rules": ["cross_check_signed_order"] }
+    },
+    {
+      "name": "urgent add-on books on the signed urgent order",
+      "action": {
+        "kind": "slot_booking",
+        "siteOfService": "office_procedure_room",
+        "confidence": 0.93,
+        "urgentAddOn": true,
+        "withSignedOrder": true,
+        "urgentOrder": true,
+        "facts": { "laterality": "right", "procedureCode": "28296", "procedureDate": "2027-01-14" }
+      },
+      "expected": { "disposition": "execute", "blocked": false, "rules": [] }
+    },
+    {
+      "name": "low-confidence reminder drops to approve-first",
+      "action": {
+        "kind": "reminder",
+        "siteOfService": "office_procedure_room",
+        "confidence": 0.55,
+        "withSignedOrder": true,
+        "communication": { "channel": "sms", "recipient": "patient", "identifiesAsAutomated": true },
+        "facts": { "procedureDate": "2027-01-14" }
+      },
+      "expected": { "disposition": "queue_for_approval", "blocked": false, "rules": [] }
+    },
+    {
+      "name": "payer call that hides it is automated is blocked",
+      "action": {
+        "kind": "auth_status_check",
+        "siteOfService": "asc",
+        "confidence": 0.95,
+        "communication": { "channel": "call", "recipient": "payer", "identifiesAsAutomated": false }
+      },
+      "expected": { "disposition": "escalate_to_human", "blocked": true, "rules": ["identify_as_automated"] }
+    },
+    {
+      "name": "patient reports chest pain during a confirmation call",
+      "action": {
+        "kind": "confirmation",
+        "siteOfService": "asc",
+        "confidence": 0.95,
+        "withSignedOrder": true,
+        "communication": { "channel": "call", "recipient": "patient", "identifiesAsAutomated": true },
+        "patientReportedConcerns": ["emergency"]
+      },
+      "expected": { "disposition": "escalate_to_human", "blocked": true, "rules": ["escalate_patient_emergency"] }
+    },
+    {
+      "name": "third try at a facility portal goes to a human",
+      "action": { "kind": "attach_received_document", "siteOfService": "asc", "confidence": 0.95, "failedAttempts": 2 },
+      "expected": { "disposition": "escalate_to_human", "blocked": true, "rules": ["escalate_after_two_failed_attempts"] }
+    },
+    {
+      "name": "cancellation is held for approval",
+      "action": { "kind": "cancellation", "siteOfService": "asc", "confidence": 0.95 },
+      "expected": { "disposition": "queue_for_approval", "blocked": false, "rules": ["cancel_requires_human_approval"] }
+    },
+    {
+      "name": "denial appeal stays human-only",
+      "action": { "kind": "denial_appeal", "siteOfService": "asc", "confidence": 0.99 },
+      "expected": { "disposition": "escalate_to_human", "blocked": false, "rules": [] }
+    }
+  ]
+}
