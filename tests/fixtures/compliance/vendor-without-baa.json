@@ -1,0 +1,15 @@
+{
+  "lastReviewed": "2026-11-25",
+  "vendors": [
+    {
+      "id": "acme-sms",
+      "category": "sms",
+      "vendor": "Acme Messaging (synthetic)",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Synthetic vendor used to test the validator.",
+      "retention": { "summary": "Synthetic.", "verified": false, "exceptions": [] }
+    }
+  ]
+}

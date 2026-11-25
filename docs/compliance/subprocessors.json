@@ -1,0 +1,172 @@
+{
+  "$comment": "Subprocessor register. Truthful status only: no BAA is recorded as signed because no executed BAA storage reference exists in this repository. A vendor may be 'signed' only with baaSignedDate and baaDocumentRef. Categories with no chosen vendor use the vendor name 'to be selected'. Retention entries marked verified=false are working assumptions to confirm against the executed agreement or vendor documentation.",
+  "lastReviewed": "2026-11-25",
+  "vendors": [
+    {
+      "id": "aws-hosting",
+      "category": "cloud_hosting",
+      "vendor": "Amazon Web Services",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Hosts the application, database, queues, object storage and keys; stores and processes case PHI. Only HIPAA-eligible services may hold PHI.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": {
+        "summary": "Customer-controlled. Case PHI is deleted 90 days after case close by our retention job; audit log kept 6 years. Backups and snapshots must expire within the same window.",
+        "verified": false,
+        "exceptions": ["Backup and snapshot expiry must be configured to match the 90-day case PHI window; not yet implemented or verified."]
+      }
+    },
+    {
+      "id": "aws-bedrock-claude",
+      "category": "model_provider",
+      "vendor": "Claude through Amazon Bedrock (AWS)",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Model inference over case context that may include PHI. Covered by the AWS BAA only if Bedrock is in scope of the executed agreement.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": {
+        "summary": "Working assumption from public AWS documentation: Bedrock does not retain prompts or completions beyond the request and does not use them to train models. Not yet verified against current AWS terms.",
+        "verified": false,
+        "exceptions": [
+          "Abuse monitoring: confirm whether any automated abuse-detection or human review can retain or access prompts and completions, and under what terms.",
+          "Model invocation logging, if enabled by us, creates our own PHI-bearing logs that fall under our retention policy."
+        ]
+      }
+    },
+    {
+      "id": "availity",
+      "category": "payer_connectivity",
+      "vendor": "Availity",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Eligibility, authorization and claim-status transactions containing patient and coverage identifiers.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": {
+        "summary": "Vendor retention terms not yet obtained. To be recorded from the executed agreement.",
+        "verified": false,
+        "exceptions": []
+      }
+    },
+    {
+      "id": "redox",
+      "category": "ehr_integration",
+      "vendor": "Redox",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "EHR data exchange (orders, demographics, clinical documents) between practice EHRs and our connector interface.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": {
+        "summary": "Vendor retention terms not yet obtained. To be recorded from the executed agreement.",
+        "verified": false,
+        "exceptions": []
+      }
+    },
+    {
+      "id": "practice-payment-processor",
+      "category": "payments",
+      "vendor": "The practice's own payment processor (varies by practice)",
+      "selected": true,
+      "phase": 1,
+      "phiScope": "none",
+      "phiDescription": "We never handle card data and send the processor no PHI. Any payment link is created and hosted by the practice's processor.",
+      "baaStatus": "no_phi",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": {
+        "summary": "Not applicable to us: no data is sent to or held by the processor on our behalf.",
+        "verified": true,
+        "exceptions": []
+      }
+    },
+    {
+      "id": "sms-provider",
+      "category": "sms",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Planned patient reminders. Whether PHI is sent is undecided; treated as PHI until a design says otherwise.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    },
+    {
+      "id": "efax-provider",
+      "category": "efax",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Faxed authorization requests and clinical documents sent to payers and facilities.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    },
+    {
+      "id": "esignature-provider",
+      "category": "esignature",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Consent and order documents for signature; documents contain PHI.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    },
+    {
+      "id": "email-provider",
+      "category": "email",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Notifications to schedulers and practices. Design intent is no PHI in email bodies, but undecided; treated as PHI until a design says otherwise.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    },
+    {
+      "id": "logging-provider",
+      "category": "logging_observability",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Application logs and traces. Logs are PHI-scrubbed by design, but scrubbing is not yet shown sufficient; treated as PHI until it is.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    },
+    {
+      "id": "support-tools",
+      "category": "support_tooling",
+      "vendor": "to be selected",
+      "selected": false,
+      "phase": 1,
+      "phiScope": "phi",
+      "phiDescription": "Customer support or ticketing tooling. Staff could paste PHI into tickets; treated as PHI until controls exist.",
+      "baaStatus": "pending",
+      "baaSignedDate": null,
+      "baaDocumentRef": null,
+      "retention": { "summary": "Unknown until a vendor is selected.", "verified": false, "exceptions": [] }
+    }
+  ]
+}
