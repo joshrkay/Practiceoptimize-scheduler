@@ -1,0 +1,5 @@
+[
+  { "eventId": "evt-001", "envelopeId": "env-1", "type": "sent", "occurredAt": "2026-03-02T14:00:00Z" },
+  { "eventId": "evt-002", "envelopeId": "env-1", "type": "viewed", "occurredAt": "2026-03-02T15:10:00Z" },
+  { "eventId": "evt-003", "envelopeId": "env-1", "type": "signed", "occurredAt": "2026-03-02T15:20:00Z" }
+]

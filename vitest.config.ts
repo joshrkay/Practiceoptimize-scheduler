@@ -16,6 +16,7 @@ export default defineConfig({
       '@scheduler/fhir': src('./packages/fhir/src/index.ts'),
       '@scheduler/integrations-availity': src('./packages/integrations/availity/src/index.ts'),
       '@scheduler/integrations-ehr': src('./packages/integrations/ehr/src/index.ts'),
+      '@scheduler/integrations-esign': src('./packages/integrations/esign/src/index.ts'),
       '@scheduler/integrations-fax': src('./packages/integrations/fax/src/index.ts'),
       '@scheduler/integrations-portals': src('./packages/integrations/portals/src/index.ts'),
     },
