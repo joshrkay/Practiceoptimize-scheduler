@@ -1,0 +1,64 @@
+{
+  "_comment": "Synthetic data only. Two podiatry practices that share one ASC. Rows are inserted in order, table by table, as the schema owner. The cross-practice suite needs rows for BOTH practices in every table with a practice_id column: when a migration adds such a table, add rows for it here.",
+  "practices": {
+    "a": "a0000000-0000-4000-8000-00000000000a",
+    "b": "b0000000-0000-4000-8000-00000000000b"
+  },
+  "tables": [
+    {
+      "table": "organizations",
+      "rows": [
+        { "id": "a1000000-0000-4000-8000-00000000000a", "name": "Alpha Foot Health Group" },
+        { "id": "b1000000-0000-4000-8000-00000000000b", "name": "Beta Podiatry Holdings" }
+      ]
+    },
+    {
+      "table": "practices",
+      "rows": [
+        { "id": "a0000000-0000-4000-8000-00000000000a", "organization_id": "a1000000-0000-4000-8000-00000000000a", "name": "Alpha Foot & Ankle", "baa_status": "signed", "baa_signed_on": "2026-09-01" },
+        { "id": "b0000000-0000-4000-8000-00000000000b", "organization_id": "b1000000-0000-4000-8000-00000000000b", "name": "Beta Podiatry", "baa_status": "signed", "baa_signed_on": "2026-09-15" }
+      ]
+    },
+    {
+      "table": "facilities",
+      "rows": [
+        { "id": "f0000000-0000-4000-8000-000000000001", "name": "Shared Example Surgery Center", "facility_type": "asc", "npi": "1999000114", "address_line1": "1 Shared Way", "city": "Phoenix", "state": "AZ", "postal_code": "85004", "time_zone": "America/Phoenix" }
+      ]
+    },
+    {
+      "table": "locations",
+      "rows": [
+        { "id": "a3000000-0000-4000-8000-00000000000a", "practice_id": "a0000000-0000-4000-8000-00000000000a", "name": "Alpha Main", "address_line1": "10 Alpha St", "city": "Phoenix", "state": "AZ", "postal_code": "85004", "time_zone": "America/Phoenix", "billing_npi": "1999000015", "billing_tin": "861234501", "phone_number": "+16025550101" },
+        { "id": "b3000000-0000-4000-8000-00000000000b", "practice_id": "b0000000-0000-4000-8000-00000000000b", "name": "Beta Main", "address_line1": "20 Beta Ave", "city": "Tempe", "state": "AZ", "postal_code": "85281", "time_zone": "America/Phoenix", "billing_npi": "1999000023", "billing_tin": "861234502", "phone_number": "+14805550102" }
+      ]
+    },
+    {
+      "table": "practice_facility_settings",
+      "rows": [
+        { "practice_id": "a0000000-0000-4000-8000-00000000000a", "facility_id": "f0000000-0000-4000-8000-000000000001", "posting_method": "fax", "or_desk_contacts": [{ "name": "Alpha Desk Contact", "role": "OR scheduler", "phone": null, "fax": "+16025550110", "email": null }] },
+        { "practice_id": "b0000000-0000-4000-8000-00000000000b", "facility_id": "f0000000-0000-4000-8000-000000000001", "posting_method": "portal", "or_desk_contacts": [{ "name": "Beta Desk Contact", "role": "Coordinator", "phone": "+14805550111", "fax": null, "email": null }] }
+      ]
+    },
+    {
+      "table": "surgeons",
+      "rows": [
+        { "id": "a5000000-0000-4000-8000-00000000000a", "practice_id": "a0000000-0000-4000-8000-00000000000a", "npi": "1999000213", "first_name": "Alex", "last_name": "Alphatest" },
+        { "id": "b5000000-0000-4000-8000-00000000000b", "practice_id": "b0000000-0000-4000-8000-00000000000b", "npi": "1999000221", "first_name": "Bailey", "last_name": "Betasample" }
+      ]
+    },
+    {
+      "table": "surgeon_locations",
+      "rows": [
+        { "practice_id": "a0000000-0000-4000-8000-00000000000a", "surgeon_id": "a5000000-0000-4000-8000-00000000000a", "location_id": "a3000000-0000-4000-8000-00000000000a" },
+        { "practice_id": "b0000000-0000-4000-8000-00000000000b", "surgeon_id": "b5000000-0000-4000-8000-00000000000b", "location_id": "b3000000-0000-4000-8000-00000000000b" }
+      ]
+    },
+    {
+      "table": "surgeon_facility_privileges",
+      "rows": [
+        { "practice_id": "a0000000-0000-4000-8000-00000000000a", "surgeon_id": "a5000000-0000-4000-8000-00000000000a", "facility_id": "f0000000-0000-4000-8000-000000000001", "status": "active" },
+        { "practice_id": "b0000000-0000-4000-8000-00000000000b", "surgeon_id": "b5000000-0000-4000-8000-00000000000b", "facility_id": "f0000000-0000-4000-8000-000000000001", "status": "active" }
+      ]
+    }
+  ]
+}
