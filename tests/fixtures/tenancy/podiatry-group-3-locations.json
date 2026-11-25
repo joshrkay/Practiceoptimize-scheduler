@@ -1,0 +1,159 @@
+{
+  "_comment": "Synthetic data only. One parent organization, one practice, 3 locations in 2 states (TX, NM; El Paso is on Mountain time), 2 ASCs, 4 surgeons. NPIs are invented but pass the NPI check digit; phone numbers use the 555-01xx range.",
+  "organization": {
+    "id": "10000000-0000-4000-8000-000000000001",
+    "name": "Southwest Foot Health Partners"
+  },
+  "practice": {
+    "id": "20000000-0000-4000-8000-000000000001",
+    "organizationId": "10000000-0000-4000-8000-000000000001",
+    "name": "Desert Foot & Ankle Specialists",
+    "isCoveredEntity": true,
+    "baaStatus": "signed",
+    "baaSignedOn": "2026-10-01",
+    "availityCustomerId": "AV-TEST-000101"
+  },
+  "locations": [
+    {
+      "id": "30000000-0000-4000-8000-000000000001",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "name": "Austin Central Office",
+      "address": { "line1": "100 Example Way", "line2": "Suite 200", "city": "Austin", "state": "TX", "postalCode": "78701" },
+      "timeZone": "America/Chicago",
+      "billingNpi": "1999000015",
+      "billingTin": "741234501",
+      "phoneNumber": "+15125550101",
+      "smsNumber": "+15125550102",
+      "hours": {
+        "mon": { "open": "08:00", "close": "17:00" },
+        "tue": { "open": "08:00", "close": "17:00" },
+        "wed": { "open": "08:00", "close": "17:00" },
+        "thu": { "open": "08:00", "close": "17:00" },
+        "fri": { "open": "08:00", "close": "12:00" }
+      },
+      "sourceEhrInstance": "redox-sandbox-austin"
+    },
+    {
+      "id": "30000000-0000-4000-8000-000000000002",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "name": "El Paso West Office",
+      "address": { "line1": "200 Sample Blvd", "line2": null, "city": "El Paso", "state": "TX", "postalCode": "79912" },
+      "timeZone": "America/Denver",
+      "billingNpi": "1999000023",
+      "billingTin": "741234502",
+      "phoneNumber": "+19155550103",
+      "smsNumber": null,
+      "hours": {
+        "mon": { "open": "07:30", "close": "16:30" },
+        "wed": { "open": "07:30", "close": "16:30" },
+        "fri": { "open": "07:30", "close": "16:30" }
+      },
+      "sourceEhrInstance": "redox-sandbox-elpaso"
+    },
+    {
+      "id": "30000000-0000-4000-8000-000000000003",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "name": "Albuquerque Uptown Office",
+      "address": { "line1": "300 Placeholder Ave NE", "line2": null, "city": "Albuquerque", "state": "NM", "postalCode": "87110" },
+      "timeZone": "America/Denver",
+      "billingNpi": "1999000031",
+      "billingTin": "851234503",
+      "phoneNumber": "+15055550104",
+      "smsNumber": "+15055550105",
+      "hours": {
+        "tue": { "open": "08:00", "close": "17:00" },
+        "thu": { "open": "08:00", "close": "17:00" }
+      },
+      "sourceEhrInstance": null
+    }
+  ],
+  "facilities": [
+    {
+      "id": "40000000-0000-4000-8000-000000000001",
+      "name": "Capital Foot & Ankle Surgery Center",
+      "facilityType": "asc",
+      "npi": "1999000114",
+      "address": { "line1": "400 Example Pkwy", "line2": null, "city": "Austin", "state": "TX", "postalCode": "78705" },
+      "timeZone": "America/Chicago",
+      "phoneNumber": "+15125550110"
+    },
+    {
+      "id": "40000000-0000-4000-8000-000000000002",
+      "name": "Rio Grande Ambulatory Surgery Center",
+      "facilityType": "asc",
+      "npi": "1999000122",
+      "address": { "line1": "500 Sample Rd NW", "line2": null, "city": "Albuquerque", "state": "NM", "postalCode": "87104" },
+      "timeZone": "America/Denver",
+      "phoneNumber": "+15055550111"
+    }
+  ],
+  "facilitySettings": [
+    {
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "facilityId": "40000000-0000-4000-8000-000000000001",
+      "orDeskContacts": [
+        { "name": "Pat Example", "role": "OR scheduler", "phone": "+15125550120", "fax": "+15125550121", "email": "or-desk@capital-asc.example.com" }
+      ],
+      "postingMethod": "fax",
+      "blockSchedules": [
+        { "surgeonId": "50000000-0000-4000-8000-000000000001", "weekday": "tue", "start": "07:00", "end": "15:00" }
+      ],
+      "rules": { "postingLeadDays": 7, "historyAndPhysicalWithinDays": 30 }
+    },
+    {
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "facilityId": "40000000-0000-4000-8000-000000000002",
+      "orDeskContacts": [
+        { "name": "Sam Placeholder", "role": "Surgery coordinator", "phone": "+15055550122", "fax": null, "email": "scheduling@riogrande-asc.example.com" }
+      ],
+      "postingMethod": "portal",
+      "blockSchedules": [],
+      "rules": { "postingLeadDays": 5 }
+    }
+  ],
+  "surgeons": [
+    {
+      "id": "50000000-0000-4000-8000-000000000001",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "npi": "1999000213",
+      "firstName": "Avery",
+      "lastName": "Testwell",
+      "specialty": "podiatry",
+      "locationIds": ["30000000-0000-4000-8000-000000000001"],
+      "facilityPrivileges": [{ "facilityId": "40000000-0000-4000-8000-000000000001", "status": "active", "expiresOn": "2027-12-31" }]
+    },
+    {
+      "id": "50000000-0000-4000-8000-000000000002",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "npi": "1999000221",
+      "firstName": "Blake",
+      "lastName": "Samplefield",
+      "specialty": "podiatry",
+      "locationIds": ["30000000-0000-4000-8000-000000000001", "30000000-0000-4000-8000-000000000002"],
+      "facilityPrivileges": [{ "facilityId": "40000000-0000-4000-8000-000000000001", "status": "active", "expiresOn": null }]
+    },
+    {
+      "id": "50000000-0000-4000-8000-000000000003",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "npi": "1999000239",
+      "firstName": "Casey",
+      "lastName": "Mockford",
+      "specialty": "podiatry",
+      "locationIds": ["30000000-0000-4000-8000-000000000002", "30000000-0000-4000-8000-000000000003"],
+      "facilityPrivileges": [
+        { "facilityId": "40000000-0000-4000-8000-000000000001", "status": "pending", "expiresOn": null },
+        { "facilityId": "40000000-0000-4000-8000-000000000002", "status": "active", "expiresOn": "2027-06-30" }
+      ]
+    },
+    {
+      "id": "50000000-0000-4000-8000-000000000004",
+      "practiceId": "20000000-0000-4000-8000-000000000001",
+      "npi": "1999000247",
+      "firstName": "Drew",
+      "lastName": "Fixturely",
+      "specialty": "podiatry",
+      "locationIds": ["30000000-0000-4000-8000-000000000003"],
+      "facilityPrivileges": [{ "facilityId": "40000000-0000-4000-8000-000000000002", "status": "active", "expiresOn": null }]
+    }
+  ]
+}
