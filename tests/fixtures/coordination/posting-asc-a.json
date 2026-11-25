@@ -1,0 +1,39 @@
+{
+  "practiceId": "practice-podiatry-1",
+  "facility": {
+    "facilityId": "asc-lakeside",
+    "name": "Lakeside Surgery Center (synthetic)",
+    "siteType": "asc",
+    "channel": { "kind": "fax", "number": "+15555550142" },
+    "postingFormat": "sheet"
+  },
+  "case": {
+    "caseId": "case-bunion-001",
+    "practiceId": "practice-podiatry-1",
+    "facilityId": "asc-lakeside",
+    "date": "2026-12-15",
+    "startTime": "08:30",
+    "utcOffset": "-05:00",
+    "procedure": "Left first metatarsal bunionectomy (Lapidus)",
+    "cpt": ["28297"],
+    "laterality": "left",
+    "durationMinutes": 90,
+    "surgeon": "Dr. Test Surgeon",
+    "assistant": "Test Assistant PA",
+    "anesthesiaType": "MAC with popliteal block",
+    "positioning": "Supine, thigh tourniquet",
+    "equipment": ["Mini C-arm", "Pneumatic tourniquet"],
+    "implants": ["Lapidus plate system"],
+    "rep": "Synthetic Implant Co rep",
+    "urgentAddOn": false
+  },
+  "order": {
+    "orderId": "order-001",
+    "caseId": "case-bunion-001",
+    "signed": true,
+    "date": "2026-12-15",
+    "laterality": "left",
+    "procedure": "Left first metatarsal bunionectomy (Lapidus)",
+    "urgent": false
+  }
+}
