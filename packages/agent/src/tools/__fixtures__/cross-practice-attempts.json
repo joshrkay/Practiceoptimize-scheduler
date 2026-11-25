@@ -1,0 +1,47 @@
+{
+  "description": "Synthetic podiatry practices and cases. No real PHI. Each attempt is a model call made in the context of practice-podiatry-north.",
+  "callerPracticeId": "practice-podiatry-north",
+  "cases": [
+    { "caseId": "case-north-bunionectomy-0001", "practiceId": "practice-podiatry-north", "locationId": "loc-north-office-or", "status": "readiness_pending" },
+    { "caseId": "case-north-hammertoe-0002", "practiceId": "practice-podiatry-north", "locationId": "loc-north-asc", "status": "scheduled" },
+    { "caseId": "case-south-plantar-fascia-0101", "practiceId": "practice-podiatry-south", "locationId": "loc-south-asc", "status": "scheduled" },
+    { "caseId": "case-south-ankle-arthroscopy-0102", "practiceId": "practice-podiatry-south", "locationId": "loc-south-asc", "status": "readiness_pending" }
+  ],
+  "attempts": [
+    {
+      "name": "read another practice's case by ID",
+      "tool": "get_case_summary",
+      "input": { "caseId": "case-south-plantar-fascia-0101" },
+      "expectedStatus": "not_found",
+      "expectedSecurityEvent": "cross_practice_reference"
+    },
+    {
+      "name": "write to another practice's case by ID",
+      "tool": "update_case_status",
+      "input": { "caseId": "case-south-ankle-arthroscopy-0102", "status": "cancelled" },
+      "expectedStatus": "not_found",
+      "expectedSecurityEvent": "cross_practice_reference"
+    },
+    {
+      "name": "supply a practice ID alongside an own case",
+      "tool": "get_case_summary",
+      "input": { "caseId": "case-north-bunionectomy-0001", "practiceId": "practice-podiatry-south" },
+      "expectedStatus": "invalid_input",
+      "expectedSecurityEvent": "scope_argument_supplied"
+    },
+    {
+      "name": "supply a tenant ID in snake case",
+      "tool": "get_case_summary",
+      "input": { "caseId": "case-south-plantar-fascia-0101", "tenant_id": "practice-podiatry-south" },
+      "expectedStatus": "invalid_input",
+      "expectedSecurityEvent": "scope_argument_supplied"
+    },
+    {
+      "name": "smuggle a credential in a nested object",
+      "tool": "update_case_status",
+      "input": { "caseId": "case-north-hammertoe-0002", "status": "scheduled", "meta": { "apiKey": "synthetic-not-a-key" } },
+      "expectedStatus": "invalid_input",
+      "expectedSecurityEvent": "scope_argument_supplied"
+    }
+  ]
+}
