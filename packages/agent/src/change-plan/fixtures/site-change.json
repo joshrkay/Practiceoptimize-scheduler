@@ -1,0 +1,63 @@
+{
+  "description": "Synthetic. A hammertoe correction moves from an office procedure room to an ASC at the same time; the authorization still covers it.",
+  "practiceId": "practice-podiatry-demo",
+  "now": "2026-12-01T15:00:00.000Z",
+  "cases": [
+    {
+      "caseId": "case-hammertoe-0002",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0002",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "office-pr-1",
+      "siteOfService": "office_procedure_room",
+      "slotId": "slot-opr-20261215-0900",
+      "scheduledStart": "2026-12-15T09:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28285"
+        ],
+        "description": "Hammertoe correction, second toe, right foot",
+        "durationMinutes": 60
+      },
+      "authorization": {
+        "authorizationId": "auth-demo-0002",
+        "cptCodes": [
+          "28285"
+        ],
+        "validFrom": "2026-11-25T00:00:00.000Z",
+        "validThrough": "2027-02-25T23:59:59.000Z"
+      },
+      "readinessItems": [
+        {
+          "itemId": "ri-consent-0002",
+          "kind": "consent",
+          "label": "Signed surgical consent",
+          "completedOn": "2026-11-30T00:00:00.000Z",
+          "validForDays": 60
+        }
+      ],
+      "coordinationRequests": [],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-0002",
+        "start": "2026-12-22T15:00:00.000Z"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "slotId": "slot-asc-20261215-0900",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-15T09:00:00.000Z",
+      "end": "2026-12-15T10:30:00.000Z"
+    }
+  ],
+  "change": {
+    "type": "site",
+    "caseId": "case-hammertoe-0002",
+    "facilityId": "asc-sunrise-foot",
+    "siteOfService": "asc"
+  }
+}

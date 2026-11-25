@@ -1,0 +1,97 @@
+{
+  "description": "Synthetic. Staged bilateral bunionectomy series; the first case is cancelled.",
+  "practiceId": "practice-podiatry-demo",
+  "now": "2026-12-01T15:00:00.000Z",
+  "cases": [
+    {
+      "caseId": "case-series-1",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0005",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-002",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261210-0800",
+      "scheduledStart": "2026-12-10T08:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28297"
+        ],
+        "description": "Staged bunionectomy (Lapidus), left foot",
+        "durationMinutes": 120
+      },
+      "authorization": {
+        "authorizationId": "auth-series-1",
+        "cptCodes": [
+          "28297"
+        ],
+        "validFrom": "2026-11-20T00:00:00.000Z",
+        "validThrough": "2027-05-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [
+        {
+          "requestId": "coord-rep-series-1",
+          "party": "vendor",
+          "label": "Implant rep (synthetic plating vendor)"
+        }
+      ],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-series-1",
+        "start": "2026-12-10T15:00:00.000Z"
+      },
+      "series": {
+        "seriesId": "series-bilateral-bunion-0005",
+        "position": 0
+      }
+    },
+    {
+      "caseId": "case-series-2",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0005",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-002",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20270211-0800",
+      "scheduledStart": "2027-02-11T08:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28297"
+        ],
+        "description": "Staged bunionectomy (Lapidus), right foot",
+        "durationMinutes": 120
+      },
+      "authorization": {
+        "authorizationId": "auth-series-2",
+        "cptCodes": [
+          "28297"
+        ],
+        "validFrom": "2026-11-20T00:00:00.000Z",
+        "validThrough": "2027-05-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [
+        {
+          "requestId": "coord-rep-series-2",
+          "party": "vendor",
+          "label": "Implant rep (synthetic plating vendor)"
+        }
+      ],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-series-2",
+        "start": "2027-02-11T15:00:00.000Z"
+      },
+      "series": {
+        "seriesId": "series-bilateral-bunion-0005",
+        "position": 1
+      }
+    }
+  ],
+  "slots": [],
+  "change": {
+    "type": "cancellation",
+    "caseId": "case-series-1",
+    "reason": "Patient requested cancellation"
+  }
+}

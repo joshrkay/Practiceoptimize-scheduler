@@ -1,0 +1,189 @@
+{
+  "description": "Synthetic. Surgeon out sick: a day with four podiatry cases at an ASC is cancelled.",
+  "practiceId": "practice-podiatry-demo",
+  "now": "2026-12-01T15:00:00.000Z",
+  "cases": [
+    {
+      "caseId": "case-sick-1",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0101",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261208-0800",
+      "scheduledStart": "2026-12-08T08:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28297"
+        ],
+        "description": "Bunionectomy (Lapidus), right foot",
+        "durationMinutes": 120
+      },
+      "authorization": {
+        "authorizationId": "auth-sick-1",
+        "cptCodes": [
+          "28297"
+        ],
+        "validFrom": "2026-11-15T00:00:00.000Z",
+        "validThrough": "2027-01-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [
+        {
+          "requestId": "coord-rep-sick-1",
+          "party": "vendor",
+          "label": "Implant rep (synthetic plating vendor)"
+        }
+      ],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-sick-1",
+        "start": "2026-12-15T08:00:00.000Z"
+      }
+    },
+    {
+      "caseId": "case-sick-2",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0102",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261208-1030",
+      "scheduledStart": "2026-12-08T10:30:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28285"
+        ],
+        "description": "Hammertoe correction, third toe",
+        "durationMinutes": 60
+      },
+      "authorization": {
+        "authorizationId": "auth-sick-2",
+        "cptCodes": [
+          "28285"
+        ],
+        "validFrom": "2026-11-15T00:00:00.000Z",
+        "validThrough": "2027-01-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-sick-2",
+        "start": "2026-12-15T10:30:00.000Z"
+      }
+    },
+    {
+      "caseId": "case-sick-3",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0103",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261208-1200",
+      "scheduledStart": "2026-12-08T12:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28060"
+        ],
+        "description": "Partial plantar fasciectomy",
+        "durationMinutes": 60
+      },
+      "authorization": {
+        "authorizationId": "auth-sick-3",
+        "cptCodes": [
+          "28060"
+        ],
+        "validFrom": "2026-11-15T00:00:00.000Z",
+        "validThrough": "2027-01-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-sick-3",
+        "start": "2026-12-15T12:00:00.000Z"
+      }
+    },
+    {
+      "caseId": "case-sick-4",
+      "practiceId": "practice-podiatry-demo",
+      "patientRef": "synthetic-patient-0104",
+      "status": "Booked",
+      "surgeonId": "surgeon-dpm-001",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "slotId": "slot-asc-20261208-1400",
+      "scheduledStart": "2026-12-08T14:00:00.000Z",
+      "procedure": {
+        "cptCodes": [
+          "28080"
+        ],
+        "description": "Interdigital (Morton) neuroma excision",
+        "durationMinutes": 60
+      },
+      "authorization": {
+        "authorizationId": "auth-sick-4",
+        "cptCodes": [
+          "28080"
+        ],
+        "validFrom": "2026-11-15T00:00:00.000Z",
+        "validThrough": "2027-01-31T23:59:59.000Z"
+      },
+      "readinessItems": [],
+      "coordinationRequests": [],
+      "postOpVisit": {
+        "appointmentId": "appt-postop-sick-4",
+        "start": "2026-12-15T14:00:00.000Z"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "slotId": "slot-asc-20261209-0800",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-09T08:00:00.000Z",
+      "end": "2026-12-09T10:00:00.000Z"
+    },
+    {
+      "slotId": "slot-asc-20261209-1030",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-09T10:30:00.000Z",
+      "end": "2026-12-09T11:30:00.000Z"
+    },
+    {
+      "slotId": "slot-asc-20261209-1200",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-09T12:00:00.000Z",
+      "end": "2026-12-09T13:00:00.000Z"
+    },
+    {
+      "slotId": "slot-asc-20261209-1400",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-09T14:00:00.000Z",
+      "end": "2026-12-09T15:00:00.000Z"
+    },
+    {
+      "slotId": "slot-asc-20261208-1600",
+      "facilityId": "asc-sunrise-foot",
+      "siteOfService": "asc",
+      "surgeonId": "surgeon-dpm-001",
+      "start": "2026-12-08T16:00:00.000Z",
+      "end": "2026-12-08T18:00:00.000Z"
+    }
+  ],
+  "change": {
+    "type": "surgeon_calendar",
+    "surgeonId": "surgeon-dpm-001",
+    "date": "2026-12-08",
+    "reason": "Surgeon out sick"
+  }
+}
