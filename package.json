@@ -10,10 +10,11 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "packages/integrations/*"
+    "packages/integrations/*",
+    "infra"
   ],
   "scripts": {
-    "type-check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p apps/web/tsconfig.json",
+    "type-check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p infra/tsconfig.json",
     "lint": "eslint .",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",

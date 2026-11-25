@@ -1,0 +1,7 @@
+{
+  // aws-cdk-lib's typings do not compile under exactOptionalPropertyTypes, so infra relaxes only that flag.
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": { "exactOptionalPropertyTypes": false },
+  "include": ["./**/*.ts"],
+  "exclude": ["**/node_modules", "**/cdk.out"]
+}
