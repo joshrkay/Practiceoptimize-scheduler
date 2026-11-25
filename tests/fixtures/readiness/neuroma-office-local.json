@@ -1,0 +1,16 @@
+{
+  "caseId": "case-demo-neuroma-001",
+  "practiceId": "practice-podiatry-demo",
+  "procedureCode": "28080",
+  "procedureTags": ["neuroma"],
+  "siteOfService": "office_procedure_room",
+  "anesthesia": "local",
+  "facilityId": "facility-demo-office",
+  "payerId": "payer-demo-commercial",
+  "caseType": "insured",
+  "authorizationRequired": false,
+  "riskFlags": [],
+  "inHouseDme": true,
+  "urgency": "elective",
+  "surgeryDate": "2027-01-20"
+}

@@ -1,0 +1,15 @@
+{
+  "caseId": "case-demo-toe-004",
+  "practiceId": "practice-podiatry-demo",
+  "procedureCode": "28285",
+  "procedureTags": ["hammertoe", "cosmetic"],
+  "siteOfService": "office_procedure_room",
+  "anesthesia": "local",
+  "facilityId": "facility-demo-office",
+  "caseType": "self_pay",
+  "authorizationRequired": false,
+  "riskFlags": [],
+  "inHouseDme": false,
+  "urgency": "elective",
+  "surgeryDate": "2027-01-27"
+}
