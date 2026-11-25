@@ -1,0 +1,73 @@
+{
+  "description": "Synthetic submit-and-poll scenarios for apps/worker. responses[0] answers the submit; the rest answer polls in order. No PHI.",
+  "maxPolls": 5,
+  "intervalMs": 2000,
+  "scenarios": [
+    {
+      "name": "completes on the third poll",
+      "responses": [
+        { "status": 202, "headers": { "Content-Location": "https://payer.example.com/results/syn-req-0001" } },
+        { "status": 202 },
+        { "status": 202, "headers": { "Retry-After": "7" } },
+        { "status": 200, "body": { "outcome": "approved", "referenceId": "SYN-AUTH-0001" } }
+      ],
+      "expect": {
+        "status": "succeeded",
+        "polls": 3,
+        "waitsMs": [2000, 2000, 7000],
+        "result": { "outcome": "approved", "referenceId": "SYN-AUTH-0001" },
+        "humanTask": null
+      }
+    },
+    {
+      "name": "follows a result ID from the body",
+      "responses": [
+        { "status": 202, "body": { "resultId": "syn-result-0002" } },
+        { "status": 201, "body": { "outcome": "pended", "referenceId": "SYN-AUTH-0002" } }
+      ],
+      "expect": {
+        "status": "succeeded",
+        "polls": 1,
+        "waitsMs": [2000],
+        "result": { "outcome": "pended", "referenceId": "SYN-AUTH-0002" },
+        "humanTask": null
+      }
+    },
+    {
+      "name": "answers synchronously",
+      "responses": [{ "status": 200, "body": { "outcome": "not_required" } }],
+      "expect": { "status": "succeeded", "polls": 0, "waitsMs": [], "result": { "outcome": "not_required" }, "humanTask": null }
+    },
+    {
+      "name": "retries a 503 during polling",
+      "responses": [
+        { "status": 202, "headers": { "content-location": "https://payer.example.com/results/syn-req-0004" } },
+        { "status": 503 },
+        { "status": 200, "body": { "outcome": "approved" } }
+      ],
+      "expect": { "status": "succeeded", "polls": 2, "retries": 1, "result": { "outcome": "approved" }, "humanTask": null }
+    },
+    {
+      "name": "never finishes",
+      "responses": [
+        { "status": 202, "headers": { "Content-Location": "https://payer.example.com/results/syn-req-0005" } },
+        { "status": 202 },
+        { "status": 202 },
+        { "status": 202 },
+        { "status": 202 },
+        { "status": 202 }
+      ],
+      "expect": { "status": "dead", "polls": 5, "result": null, "humanTask": "poll_exhausted" }
+    },
+    {
+      "name": "submit is rejected",
+      "responses": [{ "status": 400, "body": { "error": "invalid request" } }],
+      "expect": { "status": "dead", "polls": 0, "result": null, "humanTask": "http_400" }
+    },
+    {
+      "name": "accepted without a location",
+      "responses": [{ "status": 202 }],
+      "expect": { "status": "dead", "polls": 0, "result": null, "humanTask": "poll_no_location" }
+    }
+  ]
+}
